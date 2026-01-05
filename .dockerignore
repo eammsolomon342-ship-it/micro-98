@@ -1,0 +1,237 @@
+flyctl deploy --build-only --push -a micro-98 --image-label deployment-d38c775174e4ccdb79df88f9af6b4138 
+==> Verifying app config
+--> Verified app config
+Validating /usr/src/app/fly.toml
+�[32m✓�[0m Configuration is valid
+==> Building image
+Waiting for depot builder...
+
+==> Building image with Depot
+--> build:  (​)
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 864B done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.2s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 864B done
+#1 DONE 0.0s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6
+#3 resolve docker.io/docker/dockerfile:1@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6 done
+#3 CACHED
+
+#4 [internal] load build definition from Dockerfile
+#4 Deduplicating step ID [internal] load build definition from Dockerfile, another build is calculating it done
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/node:22.21.1-slim
+#5 DONE 0.2s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 87B done
+#6 DONE 0.0s
+
+#7 [base 1/2] FROM docker.io/library/node:22.21.1-slim@sha256:7378f5a4830ef48eb36d1abf4ef398391db562b5c41a0bded83192fbcea21cc8
+#7 resolve docker.io/library/node:22.21.1-slim@sha256:7378f5a4830ef48eb36d1abf4ef398391db562b5c41a0bded83192fbcea21cc8 done
+#7 DONE 0.0s
+
+#8 [base 2/2] WORKDIR /app
+#8 CACHED
+
+#9 [internal] load build context
+#9 transferring context: 84.97kB 0.0s done
+#9 DONE 0.0s
+
+#10 [build 1/4] RUN apt-get update -qq &&     apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
+#10 CACHED
+
+#11 [build 2/4] COPY package-lock.json package.json ./
+#11 CACHED
+
+#12 [build 3/4] RUN npm ci
+#12 1.473 npm error code EUSAGE
+#12 1.473 npm error
+#12 1.473 npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+#12 1.473 npm error
+#12 1.473 npm error Invalid: lock file's openai@5.23.2 does not satisfy openai@4.104.0
+#12 1.473 npm error Missing: @types/node@18.19.130 from lock file
+#12 1.473 npm error Missing: @types/node-fetch@2.6.13 from lock file
+#12 1.473 npm error Missing: abort-controller@3.0.0 from lock file
+#12 1.473 npm error Missing: agentkeepalive@4.6.0 from lock file
+#12 1.473 npm error Missing: form-data-encoder@1.7.2 from lock file
+#12 1.473 npm error Missing: formdata-node@4.4.1 from lock file
+#12 1.473 npm error Missing: node-fetch@2.7.0 from lock file
+#12 1.473 npm error Missing: undici-types@5.26.5 from lock file
+#12 1.473 npm error Missing: form-data@4.0.5 from lock file
+#12 1.473 npm error Missing: event-target-shim@5.0.1 from lock file
+#12 1.473 npm error Missing: humanize-ms@1.2.1 from lock file
+#12 1.473 npm error Missing: asynckit@0.4.0 from lock file
+#12 1.473 npm error Missing: combined-stream@1.0.8 from lock file
+#12 1.473 npm error Missing: es-set-tostringtag@2.1.0 from lock file
+#12 1.473 npm error Missing: delayed-stream@1.0.0 from lock file
+#12 1.473 npm error Missing: has-tostringtag@1.0.2 from lock file
+#12 1.473 npm error Missing: node-domexception@1.0.0 from lock file
+#12 1.473 npm error Missing: web-streams-polyfill@4.0.0-beta.3 from lock file
+#12 1.473 npm error Missing: whatwg-url@5.0.0 from lock file
+#12 1.473 npm error Missing: tr46@0.0.3 from lock file
+#12 1.473 npm error Missing: webidl-conversions@3.0.1 from lock file
+#12 1.473 npm error
+#12 1.473 npm error Clean install a project
+#12 1.473 npm error
+#12 1.473 npm error Usage:
+#12 1.473 npm error npm ci
+#12 1.473 npm error
+#12 1.473 npm error Options:
+#12 1.473 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+#12 1.473 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+#12 1.473 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+#12 1.473 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+#12 1.473 npm error [--no-bin-links] [--no-fund] [--dry-run]
+#12 1.473 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+#12 1.473 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+#12 1.473 npm error
+#12 1.473 npm error aliases: clean-install, ic, install-clean, isntall-clean
+#12 1.473 npm error
+#12 1.473 npm error Run "npm help ci" for more info
+#12 1.474 npm notice
+#12 1.474 npm notice New major version of npm available! 10.9.4 -> 11.7.0
+#12 1.474 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+#12 1.474 npm notice To update run: npm install -g npm@11.7.0
+#12 1.474 npm notice
+#12 1.474 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-01-05T00_23_24_802Z-debug-0.log
+#12 ERROR: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
+------
+ > [build 3/4] RUN npm ci:
+1.473 npm error
+1.473 npm error aliases: clean-install, ic, install-clean, isntall-clean
+1.473 npm error
+1.473 npm error Run "npm help ci" for more info
+1.474 npm notice
+1.474 npm notice New major version of npm available! 10.9.4 -> 11.7.0
+1.474 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+1.474 npm notice To update run: npm install -g npm@11.7.0
+1.474 npm notice
+1.474 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-01-05T00_23_24_802Z-debug-0.log
+------
+==> Building image
+Waiting for depot builder...
+
+==> Building image with Depot
+--> build:  (​)
+#1 [internal] load build definition from Dockerfile
+#1 DONE 0.0s
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 864B done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.2s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6
+#3 resolve docker.io/docker/dockerfile:1@sha256:b6afd42430b15f2d2a4c5a02b919e98a525b785b1aaff16747d2f623364e39b6 done
+#3 CACHED
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 864B done
+#1 DONE 0.0s
+
+#4 [internal] load build definition from Dockerfile
+#4 Deduplicating step ID [internal] load build definition from Dockerfile, another build is calculating it done
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/node:22.21.1-slim
+#5 DONE 0.2s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 87B done
+#6 DONE 0.0s
+
+#7 [base 1/2] FROM docker.io/library/node:22.21.1-slim@sha256:7378f5a4830ef48eb36d1abf4ef398391db562b5c41a0bded83192fbcea21cc8
+#7 resolve docker.io/library/node:22.21.1-slim@sha256:7378f5a4830ef48eb36d1abf4ef398391db562b5c41a0bded83192fbcea21cc8 done
+#7 DONE 0.0s
+
+#8 [base 2/2] WORKDIR /app
+#8 CACHED
+
+#9 [internal] load build context
+#9 transferring context: 3.21kB 0.0s done
+#9 DONE 0.0s
+
+#10 [build 1/4] RUN apt-get update -qq &&     apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
+#10 CACHED
+
+#11 [build 2/4] COPY package-lock.json package.json ./
+#11 CACHED
+
+#12 [build 3/4] RUN npm ci
+#12 1.377 npm error code EUSAGE
+#12 1.377 npm error
+#12 1.377 npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+#12 1.377 npm error
+#12 1.377 npm error Invalid: lock file's openai@5.23.2 does not satisfy openai@4.104.0
+#12 1.377 npm error Missing: @types/node@18.19.130 from lock file
+#12 1.377 npm error Missing: @types/node-fetch@2.6.13 from lock file
+#12 1.377 npm error Missing: abort-controller@3.0.0 from lock file
+#12 1.377 npm error Missing: agentkeepalive@4.6.0 from lock file
+#12 1.377 npm error Missing: form-data-encoder@1.7.2 from lock file
+#12 1.377 npm error Missing: formdata-node@4.4.1 from lock file
+#12 1.377 npm error Missing: node-fetch@2.7.0 from lock file
+#12 1.377 npm error Missing: undici-types@5.26.5 from lock file
+#12 1.377 npm error Missing: form-data@4.0.5 from lock file
+#12 1.377 npm error Missing: event-target-shim@5.0.1 from lock file
+#12 1.377 npm error Missing: humanize-ms@1.2.1 from lock file
+#12 1.377 npm error Missing: asynckit@0.4.0 from lock file
+#12 1.377 npm error Missing: combined-stream@1.0.8 from lock file
+#12 1.377 npm error Missing: es-set-tostringtag@2.1.0 from lock file
+#12 1.377 npm error Missing: delayed-stream@1.0.0 from lock file
+#12 1.377 npm error Missing: has-tostringtag@1.0.2 from lock file
+#12 1.377 npm error Missing: node-domexception@1.0.0 from lock file
+#12 1.377 npm error Missing: web-streams-polyfill@4.0.0-beta.3 from lock file
+#12 1.377 npm error Missing: whatwg-url@5.0.0 from lock file
+#12 1.377 npm error Missing: tr46@0.0.3 from lock file
+#12 1.377 npm error Missing: webidl-conversions@3.0.1 from lock file
+#12 1.377 npm error
+#12 1.377 npm error Clean install a project
+#12 1.377 npm error
+#12 1.377 npm error Usage:
+#12 1.377 npm error npm ci
+#12 1.377 npm error
+#12 1.377 npm error Options:
+#12 1.377 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+#12 1.377 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+#12 1.377 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+#12 1.377 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+#12 1.377 npm error [--no-bin-links] [--no-fund] [--dry-run]
+#12 1.377 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+#12 1.377 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+#12 1.377 npm error
+#12 1.377 npm error aliases: clean-install, ic, install-clean, isntall-clean
+#12 1.377 npm error
+#12 1.377 npm error Run "npm help ci" for more info
+#12 1.378 npm notice
+#12 1.378 npm notice New major version of npm available! 10.9.4 -> 11.7.0
+#12 1.378 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+#12 1.378 npm notice To update run: npm install -g npm@11.7.0
+#12 1.378 npm notice
+#12 1.378 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-01-05T00_23_27_698Z-debug-0.log
+#12 ERROR: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
+------
+ > [build 3/4] RUN npm ci:
+1.377 npm error
+1.377 npm error aliases: clean-install, ic, install-clean, isntall-clean
+1.377 npm error
+1.377 npm error Run "npm help ci" for more info
+1.378 npm notice
+1.378 npm notice New major version of npm available! 10.9.4 -> 11.7.0
+1.378 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.7.0
+1.378 npm notice To update run: npm install -g npm@11.7.0
+1.378 npm notice
+1.378 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-01-05T00_23_27_698Z-debug-0.log
+------
+Error: failed to fetch an image or build from source: error building: failed to solve: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
+Dockerfile failed to build error
+unsuccessful command 'flyctl deploy --build-only --push -a micro-98 --image-label deployment-d38c775174e4ccdb79df88f9af6b4138 '
